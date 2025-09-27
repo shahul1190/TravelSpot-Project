@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+        <h1 id="detailsid">{{ tour.Name }}</h1>
+
+<div><br><br>
+
+<div class="container">
+  <div class="row" style="margin-top: 30px; ">
+    <div class="col-md-2" >
+      <div class="card" style="width: 18rem; background-color: #FFD7BE;">
+        <img src="{{ tour.Tour_img }}" class="card-img-top" alt="Tour Image" style="height: 200px;">
+        <div class="card-body">
+          <h5 class="card-title" style="font-size: 12px; font-family: Century; font-weight: bold;">{{ state }}, {{ district }}</h5><br>
+          <h5 class="card-title" style="font-size: 12px; font-family: Century; font-weight: bold;">{{ tour.Weather }}</h5>
+          <a id="map-link" href="{{ tour.Map_link }}" target="_blank" class="btn btn-outline-warning">Google Map</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-md-4"></div>
+
+    <div class="col-md-6" style="background-color: #f0f0f0; padding: 5px;">
+      <p style="font-size: 14px; font-family: Arial; font-weight: bold;">
+        <h2 style="color:#CD7F32; font-style:italic;">FEATURES</h2>
+        <ul>
+          {% for feature in features %}
+            <li style="font-size: 12px; font-family: Century; font-weight: bold;">{{ feature }}</li>
+          {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    </div>
+</div><br> <br>
+
+<div class="d-flex justify-content-center mb-3">
+<a href="{% url 'index'  %}" class="btn btn-outline-light - Light gray outline (#f8f9fa)">HOME</a>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
